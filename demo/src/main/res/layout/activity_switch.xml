@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SwitchActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/yurisa_04" />
+
+    <TextView
+        android:id="@+id/tvTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/bg_common"
+        android:padding="5dp"
+        android:text="双击屏幕试试"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+
+    <RadioGroup
+        android:id="@+id/rgType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/bg_common"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="StatusBar"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NavigationBar"
+            android:textColor="@android:color/white" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgFitWindow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rgType"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_common"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FitWindow"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbFitWindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="True"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbNoFitWindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="False"
+            android:textColor="@android:color/white" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rgType"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/rgFitWindow"
+        android:layout_toRightOf="@id/rgFitWindow"
+        android:background="@drawable/bg_common"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Light"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="True"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbNoLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="False"
+            android:textColor="@android:color/white" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/bg_common"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:drawableRight="@drawable/color_red"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbCyan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/color_cyan"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbGradient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/color_gradient"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbAlphaBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/color_alpha_black"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbAlphaGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/color_alpha_green"
+            android:textColor="@android:color/white" />
+
+        <RadioButton
+            android:id="@+id/rbTransparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvApply"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/bg_common"
+        android:gravity="center"
+        android:text="Apply"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="kbl_keyboard_listener" type="id"/>
+    <item name="kbl_visible_height" type="id"/>
+    <item name="kbl_origin_visible_height" type="id"/>
+    <item name="kbl_origin_height" type="id"/>
+    <item name="kbl_open_keyboard" type="id"/>
+    <item name="kbl_close_keyboard" type="id"/>
+    <item name="kbl_keyboard_opened" type="id"/>
+
+    <item name="fragment_container_view_tag" type="id"/>
+</resources>

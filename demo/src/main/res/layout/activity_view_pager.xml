@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewPagerActivity">
+
+    <LinearLayout
+        android:id="@+id/llBottomTab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/flAndroid"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/ivAndroid"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_android_sliver_24dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flAlbum"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/ivAlbum"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_album_sliver_24dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flCamera"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/ivCamera"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_camera_sliver_24dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flGames"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:id="@+id/ivGames"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_games_sliver_24dp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/llBottomTab">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_common"
+        android:gravity="center"
+        android:paddingHorizontal="4dp"
+        android:text="注意观察滑动过程中状态栏字体颜色变化"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+</RelativeLayout>
