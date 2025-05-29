@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.maven2.publish)
+//    alias(libs.plugins.maven2.publish)
+    id("maven-publish")
 }
 
 afterEvaluate {
@@ -9,10 +10,11 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
+                afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
+
                 groupId = "cn.kais.immer" // 请填入你的组件名
                 artifactId = "OxImmer" // 请填入你的工件名
-                version = "0.0.1" // 请填入工件的版本名
-                afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
+                version = "0.0.2" // 请填入工件的版本名
             }
         }
     }
