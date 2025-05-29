@@ -1,23 +1,47 @@
+import com.android.build.gradle.internal.api.DefaultAndroidSourceDirectorySet
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-//    alias(libs.plugins.maven2.publish)
-    id("maven-publish")
+    alias(libs.plugins.maven2.publish)
 }
+
+//val version = "0.0.2"
+//val groupId = "cn.kais.immer"
+//val artifactId = "OxImmer"
 
 afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
-
+                artifact(tasks["sourcesJar"])//打包 jar
+//                afterEvaluate { artifact(tasks.getByName("sourcesJar")) }
+//                artifact("$buildDir/outputs/aar/${artifactId}_${version}.aar")//打包 aar
+                version = "0.0.3" // 请填入工件的版本名
                 groupId = "cn.kais.immer" // 请填入你的组件名
                 artifactId = "OxImmer" // 请填入你的工件名
-                version = "0.0.2" // 请填入工件的版本名
             }
         }
     }
+}
+
+//task sourcesJar(type: Jar) {
+//    if (project.hasProperty("kotlin")) {
+//        from android.sourceSets.main.java.getSrcDirs()
+//    } else if (project.hasProperty("android")) {
+//        from android.sourceSets.main.java.sourceFiles
+//    } else {
+//        println project
+//                from sourceSets.main.allSource
+//    }
+//    archiveClassifier='sources'
+//}
+
+tasks.register("sourcesJar", Jar::class.java) {
+    archiveClassifier.set("source")
+    from(android.sourceSets["main"].java.srcDirs)
+    from((android.sourceSets["main"].kotlin as DefaultAndroidSourceDirectorySet).srcDirs)
 }
 
 android {
@@ -30,13 +54,19 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
+//    libraryVariants.configureEach {
+//        outputs.configureEach {
+//            val output = this as BaseVariantOutputImpl
+//            if (output.outputFileName.endsWith(".aar")) {
+//                output.outputFileName = "${artifactId}_${version}.aar"
+//            }
+//        }
+//    }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 
