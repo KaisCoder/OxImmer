@@ -64,7 +64,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(project(":ox-immer"))
+//    implementation(project(":ox-immer"))
 
     implementation("androidx.multidex:multidex:2.0.1")
 
@@ -75,6 +75,7 @@ dependencies {
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
-//    implementation("com.gitee.kais_coder.OxImmer:OxImmer:0.0.11")
+    implementation("com.github.KaisCoder.OxImmer:OxImmer:0.0.3")
+
 
 }
